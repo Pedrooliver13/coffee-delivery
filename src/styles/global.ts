@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 62.5%;
+  }
+
   :focus {
     outline: 0;
     box-shadow: 0 0 0 2px ${(props): string => props.theme.colors.yellow}
@@ -21,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }): string => theme.colors['base-text']};
     --webkit-font-smoothing: antialised;
   }
-
+  
   body, input, textarea, button {
     font-weight: 400;
     font-family: ${({ theme }): string => theme.fonts.default};
