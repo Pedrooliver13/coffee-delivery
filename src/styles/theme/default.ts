@@ -31,8 +31,15 @@ export const defaultTheme = {
     'button-bold-g': '1.4rem',
     'button-regular-m': '1.4rem',
   },
+  breakpoints: {
+    XS: 0,
+    SM: '576px',
+    MD: '768px',
+    LG: '992px',
+    XL: '1200px',
+  },
   fonts: {
-    default: '\'Roboto\', sans-serif',
-    title: '\'Baloo 2\', cursive',
+    default: "'Roboto', sans-serif",
+    title: "'Baloo 2', cursive",
   },
 };
