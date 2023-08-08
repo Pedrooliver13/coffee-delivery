@@ -18,11 +18,12 @@ export const HomeContent = styled.div`
 
   img {
     max-width: 100%;
-    width: 600px;
+    width: 476px;
   }
 
   .info {
-    width: 58.8rem;
+    max-width: 58rem;
+    width: 100%;
 
     .title {
       ${({ theme }): CSSProp => css`
