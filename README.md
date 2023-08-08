@@ -14,7 +14,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 $ git clone https://github.com/Pedrooliver13/coffee-delivery.git
 
 # Go into the repository
-$ cd ignite-timer
+$ cd coffee-delivery
 
 # Install dependencies
 $ npm install or yarn install
