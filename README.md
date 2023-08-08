@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+![image](https://github.com/Pedrooliver13/ignite-timer/assets/56042296/286b676f-eb11-4cc4-99b8-110fac729382)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies</a>
+</p>
 
-Currently, two official plugins are available:
+## :information_source: How To Use
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) or [Yarn](https://yarnpkg.com/getting-started) installed on your computer. From your command line:
 
-## Expanding the ESLint configuration
+```bash
+# Clone this repository
+$ git clone https://github.com/Pedrooliver13/coffee-delivery.git
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Go into the repository
+$ cd ignite-timer
 
-- Configure the top-level `parserOptions` property like this:
+# Install dependencies
+$ npm install or yarn install
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+# Run the app
+$ npm start or yarn start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## :rocket: Technologies
+
+-  [React](https://pt-br.reactjs.org/)
+-  [Typescript]()
+-  [Styled-components]()
+-  [Phosphor](https://phosphoricons.com/)
+
+---
+
+Made with ♥ by Pedro Oliveira
