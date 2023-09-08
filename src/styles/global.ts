@@ -32,6 +32,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }): string => theme.textSizes['text-m']};
   }
 
+  img {
+    max-width: 100%;
+    position: relative;
+    display: inline-block;
+    object-fit: contain;
+  }
+
   .container {
     ${Container};
   }

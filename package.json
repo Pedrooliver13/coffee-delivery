@@ -9,6 +9,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "dependencies": {
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
@@ -28,6 +31,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "lodash": "^4.17.21",
     "typescript": "^5.0.2",
+    "typescript-styled-plugin": "^0.18.3",
     "vite": "^4.4.5",
     "vite-tsconfig-paths": "^4.2.0"
   }
