@@ -21,6 +21,6 @@ export const Container = css`
   }
   /* BREAKPOINT 1200px */
   @media (min-width: 75em) {
-    max-width: 1440px;
+    max-width: 1200px;
   }
 `;
