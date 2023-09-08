@@ -112,6 +112,8 @@ export const ItemList = styled.li<HomeItemListProps>`
 `;
 
 export const HomeContent = styled.main`
+  padding-bottom: 9.4rem;
+
   .title {
     color: ${({ theme }): string => theme.colors['base-subtitle']};
     font-size: ${({ theme }): string => theme.textSizes['title-l']};
