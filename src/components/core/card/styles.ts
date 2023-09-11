@@ -46,6 +46,7 @@ export const CardContainer = styled.div`
 
     p {
       font-size: ${({ theme }): string => theme.textSizes['text-s']};
+      color: ${({ theme }): string => theme.colors['base-label']};
     }
   }
 
