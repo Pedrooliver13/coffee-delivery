@@ -36,6 +36,8 @@ export const HeaderDashboard = styled.div`
   }
 
   .cart {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +48,22 @@ export const HeaderDashboard = styled.div`
 
     svg {
       color: ${({ theme }): string => theme.colors['yellow-dark']};
+    }
+
+    &__count {
+      position: absolute;
+      top: -10px;
+      right: -5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      font-weight: 700;
+      background-color: ${({ theme }): string => theme.colors['yellow-dark']};
+      color: ${({ theme }): string => theme.colors.white};
+      font-size: ${({ theme }): string => theme.textSizes['text-bold-xs']};
     }
   }
 `;

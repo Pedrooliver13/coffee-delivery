@@ -8,39 +8,32 @@ interface HomeItemListProps {
   variant: 'purple' | 'base-text' | 'yellow-dark' | 'yellow';
 }
 
-export const HomeContainer = styled.section`
-  background: url(${BackgroundSection}) no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 80vh;
-
-  @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-    background: none;
-    padding-top: 1rem;
-  }
-`;
-
 export const SectionHero = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 90px;
-  padding-top: 9.4rem;
-  padding-bottom: 9.4rem;
+  background: url(${BackgroundSection}) bottom no-repeat;
+  background-size: cover;
 
-  @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  img {
-    max-width: 100%;
+  div.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    padding-top: 9.4rem;
+    padding-bottom: 9.4rem;
 
     @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-      margin-top: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+
+      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+        margin-top: 3rem;
+      }
     }
   }
 
@@ -111,7 +104,7 @@ export const ItemList = styled.li<HomeItemListProps>`
   }
 `;
 
-export const HomeContent = styled.main`
+export const CoffeeContent = styled.main`
   padding-bottom: 9.4rem;
 
   .title {
@@ -123,16 +116,12 @@ export const HomeContent = styled.main`
 
   .coffee-list {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 48px;
 
     @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
       justify-content: center;
     }
   }
-`;
-
-export const CoffeeList = styled.section`
-  display: flex;
-  justify-content: space-between;
 `;
