@@ -59,20 +59,26 @@ export const CardContainer = styled.div`
 
     .counter {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 7.2rem;
+      min-height: 32px;
       padding: 1rem;
       background-color: ${({ theme }): string => theme.colors['base-button']};
+      color: ${({ theme }): string => theme.colors['base-title']};
       border-radius: 6px;
+      gap: 4px;
 
       svg {
+        cursor: pointer;
+        width: 14px;
         color: ${({ theme }): string => theme.colors['purple']};
       }
     }
 
     &__dashboard {
       display: flex;
-      gap: 10px;
+      gap: 8px;
 
       button {
         display: flex;

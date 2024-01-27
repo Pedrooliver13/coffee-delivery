@@ -9,8 +9,12 @@ interface HomeItemListProps {
 }
 
 export const SectionHero = styled.section`
-  background: url(${BackgroundSection}) bottom no-repeat;
-  background-size: cover;
+  background: url(${BackgroundSection}) center center no-repeat;
+  background-size: contain;
+
+  @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+    background: none;
+  }
 
   div.content {
     display: flex;
@@ -19,7 +23,7 @@ export const SectionHero = styled.section`
     padding-top: 9.4rem;
     padding-bottom: 9.4rem;
 
-    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+    @media (max-width: ${({ theme }): string => theme.breakpoints.LG}) {
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
@@ -29,52 +33,55 @@ export const SectionHero = styled.section`
     }
 
     img {
-      max-width: 100%;
+      max-width: 476px;
+      width: 100%;
+      object-fit: contain;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+      @media (max-width: ${({ theme }): string => theme.breakpoints.XL}) {
+        max-width: 376px;
         margin-top: 3rem;
       }
     }
-  }
 
-  .info {
-    &__title {
-      color: ${({ theme }): string => theme.colors['base-title']};
-      font-family: ${({ theme }): string => theme.fonts.title};
-      font-size: ${({ theme }): string => theme.textSizes['title-xl']};
-      font-weight: 800;
-      line-height: 62.4px;
-      margin-bottom: 1.6rem;
+    .info {
+      &__title {
+        color: ${({ theme }): string => theme.colors['base-title']};
+        font-family: ${({ theme }): string => theme.fonts.title};
+        font-size: ${({ theme }): string => theme.textSizes['title-xl']};
+        font-weight: 800;
+        line-height: 62.4px;
+        margin-bottom: 1.6rem;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-        font-size: ${({ theme }): string => theme.textSizes['title-s']};
-        align-self: center;
-        line-height: 20px;
+        @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+          font-size: ${({ theme }): string => theme.textSizes['title-s']};
+          align-self: center;
+          line-height: 20px;
+        }
       }
-    }
 
-    &__subtitle {
-      color: ${({ theme }): string => theme.colors['base-title']};
-      font-size: ${({ theme }): string => theme.textSizes['text-l']};
-      line-height: 26px;
+      &__subtitle {
+        color: ${({ theme }): string => theme.colors['base-title']};
+        font-size: ${({ theme }): string => theme.textSizes['text-l']};
+        line-height: 26px;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-        font-size: ${({ theme }): string => theme.textSizes['text-s']};
-        align-self: center;
-        line-height: 20px;
+        @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+          font-size: ${({ theme }): string => theme.textSizes['text-s']};
+          align-self: center;
+          line-height: 20px;
+        }
       }
-    }
 
-    &__list {
-      margin-top: 5.6rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      &__list {
+        margin-top: 5.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
+        @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+        }
       }
     }
   }
@@ -112,6 +119,11 @@ export const CoffeeContent = styled.main`
     font-size: ${({ theme }): string => theme.textSizes['title-l']};
     font-family: ${({ theme }): string => theme.fonts.title};
     font-weight: 800;
+
+    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+      font-size: ${({ theme }): string => theme.textSizes['title-s']};
+      text-align: center;
+    }
   }
 
   .coffee-list {

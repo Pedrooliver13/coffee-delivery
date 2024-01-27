@@ -1,18 +1,46 @@
 // Packages
 import { ReactElement } from 'react';
+import { useForm } from 'react-hook-form';
+import { useHookFormMask } from 'use-mask-input';
+import { CurrencyDollar as CurrencyDollarIcon } from 'phosphor-react';
+
+// Components
+import { Input } from 'components/core';
+
+import { EMasks } from 'utils/masks';
 
 // Styles
 import * as Styled from './styles';
 
 export const Checkout = (): ReactElement => {
+  const { register } = useForm();
+  const registerWithMask = useHookFormMask(register);
+
   return (
     <Styled.CheckoutContainer className="container">
       <div className="forms">
         <h2 className="title">Complete seu pedido</h2>
 
         <form>
-          <div className="forms--address">Formulário de endereço</div>
-          <div className="forms--payment">Formulário de pagamento</div>
+          <div className="forms__address">
+            <Input label="CEP" {...registerWithMask('cep', [EMasks.CEP])} />
+            <Input label="Rua" name="street" className="col-span-3" />
+            <Input label="Número" name="addressNumber" />
+            <Input
+              label="Complemento"
+              name="addressNumber"
+              className="col-span-2"
+            />
+            <Input label="Bairro" name="neighborhood" />
+            <Input label="Cidade" name="city" />
+            <Input label="UF" name="uf" maxLength={2} />
+          </div>
+          <div className="forms__payment">
+            <header>
+              <CurrencyDollarIcon />
+              <div></div>
+            </header>
+          </div>
         </form>
       </div>
 
