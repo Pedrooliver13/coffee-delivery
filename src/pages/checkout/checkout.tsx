@@ -2,7 +2,10 @@
 import { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHookFormMask } from 'use-mask-input';
-import { CurrencyDollar as CurrencyDollarIcon } from 'phosphor-react';
+import {
+  MapPinLine as MapPinLineIcon,
+  CurrencyDollar as CurrencyDollarIcon,
+} from 'phosphor-react';
 
 // Components
 import { Input } from 'components/core';
@@ -23,6 +26,15 @@ export const Checkout = (): ReactElement => {
 
         <form>
           <div className="forms__address">
+            <header className="forms__address--header col-span-3">
+              <MapPinLineIcon size={22} />
+
+              <div>
+                <h1>Endereço de Entrega</h1>
+                <span>Informe o endereço onde deseja receber o pedido</span>
+              </div>
+            </header>
+
             <Input label="CEP" {...registerWithMask('cep', [EMasks.CEP])} />
             <Input label="Rua" name="street" className="col-span-3" />
             <Input label="Número" name="addressNumber" />
@@ -36,9 +48,16 @@ export const Checkout = (): ReactElement => {
             <Input label="UF" name="uf" maxLength={2} />
           </div>
           <div className="forms__payment">
-            <header>
-              <CurrencyDollarIcon />
-              <div></div>
+            <header className="forms__payment--header col-span-3">
+              <CurrencyDollarIcon size={22} />
+
+              <div>
+                <h1>Pagamento</h1>
+                <span>
+                  O pagamento é feito na entrega. Escolha a forma que deseja
+                  pagar
+                </span>
+              </div>
             </header>
           </div>
         </form>

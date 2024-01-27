@@ -132,7 +132,7 @@ export const CoffeeContent = styled.main`
     flex-wrap: wrap;
     gap: 48px;
 
-    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+    @media (max-width: ${(props): string => props.theme.breakpoints.XL}) {
       justify-content: center;
     }
   }

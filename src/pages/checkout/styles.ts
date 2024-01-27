@@ -47,6 +47,31 @@ export const CheckoutContainer = styled.div`
         grid-column: span 2 / auto;
       }
     }
+
+    &__address--header,
+    &__payment--header {
+      display: flex;
+      margin-bottom: 3.2rem;
+      gap: 8px;
+
+      h1 {
+        font-weight: 400;
+        font-size: ${(props) => props.theme.textSizes['text-m']};
+        color: ${(props) => props.theme.colors['base-subtitle']};
+      }
+
+      span {
+        font-size: 1.4rem;
+        color: ${(props) => props.theme.colors['base-text']};
+      }
+    }
+
+    &__address--header svg {
+      color: ${(props) => props.theme.colors['yellow-dark']};
+    }
+    &__payment--header svg {
+      color: ${(props) => props.theme.colors.purple};
+    }
   }
 
   .coffees__selected {
