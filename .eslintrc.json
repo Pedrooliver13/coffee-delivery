@@ -15,10 +15,6 @@
       { "allowConstantExport": true }
     ],
     "@typescript-eslint/explicit-module-boundary-types": "error",
-    "@typescript-eslint/explicit-function-return-type": [
-      "warn",
-      { "allowConstantExport": true }
-    ],
     "@typescript-eslint/no-empty-interface": 0,
     "grouped-import/group": [
       "warn",

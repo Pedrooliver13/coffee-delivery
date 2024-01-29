@@ -72,6 +72,16 @@ export const CheckoutContainer = styled.div`
     &__payment--header svg {
       color: ${(props) => props.theme.colors.purple};
     }
+
+    &__payment--list {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+
+      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   .coffees__selected {

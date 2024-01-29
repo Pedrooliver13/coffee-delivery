@@ -5,19 +5,25 @@ import { useHookFormMask } from 'use-mask-input';
 import {
   MapPinLine as MapPinLineIcon,
   CurrencyDollar as CurrencyDollarIcon,
+  CreditCard as CreditCardIcon,
+  Bank as BankIcon,
+  Money as MoneyIcon,
 } from 'phosphor-react';
 
 // Components
-import { Input } from 'components/core';
+import { Input, RadioButton } from 'components/core';
 
+// Utils
 import { EMasks } from 'utils/masks';
 
 // Styles
 import * as Styled from './styles';
 
 export const Checkout = (): ReactElement => {
-  const { register } = useForm();
+  const { register, watch } = useForm();
   const registerWithMask = useHookFormMask(register);
+
+  console.log("watch('paymentMethod')", watch('paymentMethod'));
 
   return (
     <Styled.CheckoutContainer className="container">
@@ -47,6 +53,7 @@ export const Checkout = (): ReactElement => {
             <Input label="Cidade" name="city" />
             <Input label="UF" name="uf" maxLength={2} />
           </div>
+
           <div className="forms__payment">
             <header className="forms__payment--header col-span-3">
               <CurrencyDollarIcon size={22} />
@@ -59,6 +66,26 @@ export const Checkout = (): ReactElement => {
                 </span>
               </div>
             </header>
+
+            <div className="forms__payment--list col-span-3">
+              <RadioButton
+                label="CARTÃO DE CRÉDITO"
+                startIcon={<CreditCardIcon size={16} />}
+                {...register('paymentMethod', { value: 1 })}
+              />
+              <RadioButton
+                label="CARTÃO DE DÉBITO"
+                startIcon={<BankIcon size={16} />}
+                value={2}
+                {...register('paymentMethod')}
+              />
+              <RadioButton
+                label="DINHEIRO"
+                startIcon={<MoneyIcon size={16} />}
+                value={3}
+                {...register('paymentMethod')}
+              />
+            </div>
           </div>
         </form>
       </div>
