@@ -1,6 +1,6 @@
 // Packages
 import { ReactElement } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useHookFormMask } from 'use-mask-input';
 import {
   MapPinLine as MapPinLineIcon,
@@ -19,11 +19,15 @@ import { EMasks } from 'utils/masks';
 // Styles
 import * as Styled from './styles';
 
-export const Checkout = (): ReactElement => {
-  const { register, watch } = useForm();
-  const registerWithMask = useHookFormMask(register);
+enum EPaymentMethods {
+  CREDIT_CARD = '1',
+  DEBIT_CARD = '2',
+  MONEY = '3',
+}
 
-  console.log("watch('paymentMethod')", watch('paymentMethod'));
+export const Checkout = (): ReactElement => {
+  const { register, control } = useForm();
+  const registerWithMask = useHookFormMask(register);
 
   return (
     <Styled.CheckoutContainer className="container">
@@ -68,22 +72,36 @@ export const Checkout = (): ReactElement => {
             </header>
 
             <div className="forms__payment--list col-span-3">
-              <RadioButton
-                label="CARTÃO DE CRÉDITO"
-                startIcon={<CreditCardIcon size={16} />}
-                {...register('paymentMethod', { value: 1 })}
-              />
-              <RadioButton
-                label="CARTÃO DE DÉBITO"
-                startIcon={<BankIcon size={16} />}
-                value={2}
-                {...register('paymentMethod')}
-              />
-              <RadioButton
-                label="DINHEIRO"
-                startIcon={<MoneyIcon size={16} />}
-                value={3}
-                {...register('paymentMethod')}
+              <Controller
+                name="paymentMethod"
+                control={control}
+                defaultValue={null}
+                rules={{ required: 'Please select a gender' }}
+                render={({ field }) => (
+                  <>
+                    <RadioButton
+                      {...field}
+                      label="CARTÃO DE CRÉDITO"
+                      startIcon={<CreditCardIcon size={16} />}
+                      value={EPaymentMethods.CREDIT_CARD}
+                      checked={field.value === EPaymentMethods.CREDIT_CARD}
+                    />
+                    <RadioButton
+                      {...field}
+                      label="CARTÃO DE DÉBITO"
+                      startIcon={<BankIcon size={16} />}
+                      value={EPaymentMethods.DEBIT_CARD}
+                      checked={field.value === EPaymentMethods.DEBIT_CARD}
+                    />
+                    <RadioButton
+                      {...field}
+                      label="DINHEIRO"
+                      startIcon={<MoneyIcon size={16} />}
+                      value={EPaymentMethods.MONEY}
+                      checked={field.value === EPaymentMethods.MONEY}
+                    />
+                  </>
+                )}
               />
             </div>
           </div>

@@ -10,8 +10,6 @@ interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const RadioButton = (props: RadioButtonProps): ReactElement => {
-  console.log('props', props);
-
   return (
     <Styled.RadioButtonContainer
       htmlFor={String(props.value)}
