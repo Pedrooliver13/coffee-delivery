@@ -89,7 +89,7 @@ export const CheckoutContainer = styled.div`
     width: 100%;
 
     &--form {
-      padding: 10rem;
+      padding: 4rem;
       margin-top: 10px;
       background-color: ${({ theme }): string => theme.colors['base-card']};
       background-color: ${({ theme }): string => theme.colors['base-card']};

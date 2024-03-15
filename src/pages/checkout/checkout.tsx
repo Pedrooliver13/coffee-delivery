@@ -11,7 +11,7 @@ import {
 } from 'phosphor-react';
 
 // Components
-import { Input, RadioButton } from 'components/core';
+import { Input, RadioButton, Button } from 'components/core';
 
 // Utils
 import { EMasks } from 'utils/masks';
@@ -45,7 +45,11 @@ export const Checkout = (): ReactElement => {
               </div>
             </header>
 
-            <Input label="CEP" {...registerWithMask('cep', [EMasks.CEP])} />
+            <Input
+              label="CEP"
+              autoComplete="off"
+              {...registerWithMask('cep', [EMasks.CEP])}
+            />
             <Input label="Rua" name="street" className="col-span-3" />
             <Input label="Número" name="addressNumber" />
             <Input
@@ -76,7 +80,6 @@ export const Checkout = (): ReactElement => {
                 name="paymentMethod"
                 control={control}
                 defaultValue={null}
-                rules={{ required: 'Please select a gender' }}
                 render={({ field }) => (
                   <>
                     <RadioButton
@@ -111,12 +114,9 @@ export const Checkout = (): ReactElement => {
       <div className="coffees__selected">
         <h2 className="title">Cafés selecionados</h2>
 
-        <p className="coffees__selected--form">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quis
-          perspiciatis nobis, voluptatem consequatur suscipit quidem voluptas,
-          vero veniam voluptatum dolores tenetur impedit magni, fuga
-          voluptatibus aspernatur nemo dolorem quae!
-        </p>
+        <form className="coffees__selected--form">
+          <Button>Confirmar pedido</Button>
+        </form>
       </div>
     </Styled.CheckoutContainer>
   );
