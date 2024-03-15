@@ -11,7 +11,7 @@ import {
 } from 'phosphor-react';
 
 // Components
-import { Input, RadioButton, Button } from 'components/core';
+import { Input, RadioButton, Button, CardCart } from 'components/core';
 
 // Utils
 import { EMasks } from 'utils/masks';
@@ -115,6 +115,8 @@ export const Checkout = (): ReactElement => {
         <h2 className="title">Cafés selecionados</h2>
 
         <form className="coffees__selected--form">
+          <CardCart />
+
           <Button>Confirmar pedido</Button>
         </form>
       </div>

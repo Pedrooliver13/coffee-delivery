@@ -88,6 +88,11 @@ export const CheckoutContainer = styled.div`
     max-width: 448px;
     width: 100%;
 
+    @media (max-width: ${({ theme }): string => theme.breakpoints.XL}) {
+      max-width: 100%;
+      padding: 0;
+    }
+
     &--form {
       padding: 4rem;
       margin-top: 10px;
