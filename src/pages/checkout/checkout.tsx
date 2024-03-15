@@ -114,10 +114,13 @@ export const Checkout = (): ReactElement => {
       <div className="coffees__selected">
         <h2 className="title">Cafés selecionados</h2>
 
-        <form className="coffees__selected--form">
-          <CardCart />
+        <form className="form">
+          <div className="form__itens">
+            <CardCart />
+            <CardCart />
+          </div>
 
-          <Button>Confirmar pedido</Button>
+          <Button className="form__submit">Confirmar pedido</Button>
         </form>
       </div>
     </Styled.CheckoutContainer>

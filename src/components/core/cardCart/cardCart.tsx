@@ -1,5 +1,9 @@
 // Packages
 import { ReactElement } from 'react';
+import { Trash as TrashIcon } from 'phosphor-react';
+
+// Components
+import { CounterButton, Button } from 'components/core';
 
 // Assets
 import CoffeeImage from 'assets/coffe-card.svg';
@@ -20,8 +24,10 @@ export const CardCart = (): ReactElement => {
         </header>
 
         <div className="content__footer">
-          <button className="content__footer--add">Adicionar</button>
-          <button className="content__footer--remove">Remover</button>
+          <CounterButton />
+          <Button variant="secondary" startIcon={<TrashIcon size={16} />}>
+            Remover
+          </Button>
         </div>
       </div>
     </Styled.CardCartContainer>

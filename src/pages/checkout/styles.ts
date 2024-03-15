@@ -93,12 +93,18 @@ export const CheckoutContainer = styled.div`
       padding: 0;
     }
 
-    &--form {
+    .form {
+      display: flex;
+      flex-direction: column;
+      height: 448px;
       padding: 4rem;
-      margin-top: 10px;
-      background-color: ${({ theme }): string => theme.colors['base-card']};
       background-color: ${({ theme }): string => theme.colors['base-card']};
       border-radius: 6px 44px;
+
+      &__itens {
+        overflow: auto;
+        max-height: 220px;
+      }
     }
   }
 `;
