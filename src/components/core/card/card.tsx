@@ -1,5 +1,6 @@
 // Packages
 import { ReactElement } from 'react';
+import { toast } from 'react-toastify';
 import {
   Minus as MinusIcon,
   Plus as PlusIcon,
@@ -41,7 +42,10 @@ export const Card = (): ReactElement => {
               <PlusIcon size={14} />
             </div>
           </div>
-          <button className="cart">
+          <button
+            className="cart"
+            onClick={() => toast.info('Ativei', { theme: 'dark' })}
+          >
             <ShoppingCartIcon size={22} weight="fill" />
           </button>
         </div>

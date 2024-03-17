@@ -31,7 +31,8 @@
           { "path": "use-mask-input" },
           { "path": "zod" },
           { "path": "date-fns" },
-          { "path": "phosphor-react" }
+          { "path": "phosphor-react" },
+          { "path": "react-toastify" }
         ],
         "Utils": [{ "path": "utils" }],
         "Routes": [{ "path": "router" }],
