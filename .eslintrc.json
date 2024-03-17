@@ -15,7 +15,6 @@
       { "allowConstantExport": true }
     ],
     "@typescript-eslint/explicit-module-boundary-types": "error",
-    "@typescript-eslint/explicit-function-return-type": "error",
     "@typescript-eslint/no-empty-interface": 0,
     "grouped-import/group": [
       "warn",
@@ -28,10 +27,13 @@
           { "path": "styled-components" },
           { "path": "react-router-dom" },
           { "path": "@hookform" },
+          { "path": "react-hook-form" },
+          { "path": "use-mask-input" },
           { "path": "zod" },
           { "path": "date-fns" },
           { "path": "phosphor-react" }
         ],
+        "Utils": [{ "path": "utils" }],
         "Routes": [{ "path": "router" }],
         "Pages": [{ "path": "pages/" }],
         "Reducers": [{ "path": "reducers" }],

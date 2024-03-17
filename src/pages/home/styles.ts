@@ -8,80 +8,80 @@ interface HomeItemListProps {
   variant: 'purple' | 'base-text' | 'yellow-dark' | 'yellow';
 }
 
-export const HomeContainer = styled.section`
-  background: url(${BackgroundSection}) no-repeat;
+export const SectionHero = styled.section`
+  background: url(${BackgroundSection}) center center no-repeat;
   background-size: contain;
-  width: 100%;
-  height: 80vh;
 
   @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
     background: none;
-    padding-top: 1rem;
-  }
-`;
-
-export const SectionHero = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 90px;
-  padding-top: 9.4rem;
-  padding-bottom: 9.4rem;
-
-  @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
   }
 
-  img {
-    max-width: 100%;
+  div.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    padding-top: 9.4rem;
+    padding-bottom: 9.4rem;
 
-    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-      margin-top: 3rem;
+    @media (max-width: ${({ theme }): string => theme.breakpoints.LG}) {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
-  }
 
-  .info {
-    &__title {
-      color: ${({ theme }): string => theme.colors['base-title']};
-      font-family: ${({ theme }): string => theme.fonts.title};
-      font-size: ${({ theme }): string => theme.textSizes['title-xl']};
-      font-weight: 800;
-      line-height: 62.4px;
-      margin-bottom: 1.6rem;
+    img {
+      max-width: 476px;
+      width: 100%;
+      object-fit: contain;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-        font-size: ${({ theme }): string => theme.textSizes['title-s']};
-        align-self: center;
-        line-height: 20px;
+      @media (max-width: ${({ theme }): string => theme.breakpoints.XL}) {
+        max-width: 376px;
+        margin-top: 3rem;
       }
     }
 
-    &__subtitle {
-      color: ${({ theme }): string => theme.colors['base-title']};
-      font-size: ${({ theme }): string => theme.textSizes['text-l']};
-      line-height: 26px;
+    .info {
+      &__title {
+        color: ${({ theme }): string => theme.colors['base-title']};
+        font-family: ${({ theme }): string => theme.fonts.title};
+        font-size: ${({ theme }): string => theme.textSizes['title-xl']};
+        font-weight: 800;
+        line-height: 62.4px;
+        margin-bottom: 1.6rem;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
-        font-size: ${({ theme }): string => theme.textSizes['text-s']};
-        align-self: center;
-        line-height: 20px;
+        @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+          font-size: ${({ theme }): string => theme.textSizes['title-s']};
+          align-self: center;
+          line-height: 20px;
+        }
       }
-    }
 
-    &__list {
-      margin-top: 5.6rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      &__subtitle {
+        color: ${({ theme }): string => theme.colors['base-title']};
+        font-size: ${({ theme }): string => theme.textSizes['text-l']};
+        line-height: 26px;
 
-      @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
+        @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+          font-size: ${({ theme }): string => theme.textSizes['text-s']};
+          align-self: center;
+          line-height: 20px;
+        }
+      }
+
+      &__list {
+        margin-top: 5.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+        }
       }
     }
   }
@@ -111,7 +111,7 @@ export const ItemList = styled.li<HomeItemListProps>`
   }
 `;
 
-export const HomeContent = styled.main`
+export const CoffeeContent = styled.main`
   padding-bottom: 9.4rem;
 
   .title {
@@ -119,20 +119,21 @@ export const HomeContent = styled.main`
     font-size: ${({ theme }): string => theme.textSizes['title-l']};
     font-family: ${({ theme }): string => theme.fonts.title};
     font-weight: 800;
+
+    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+      font-size: ${({ theme }): string => theme.textSizes['title-s']};
+      text-align: center;
+    }
   }
 
   .coffee-list {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 48px;
 
-    @media (max-width: ${({ theme }): string => theme.breakpoints.MD}) {
+    @media (max-width: ${(props): string => props.theme.breakpoints.XL}) {
       justify-content: center;
     }
   }
-`;
-
-export const CoffeeList = styled.section`
-  display: flex;
-  justify-content: space-between;
 `;

@@ -25,10 +25,11 @@ export const Header = (): ReactElement => {
       <Styled.HeaderDashboard>
         <div className="location">
           <MapPinIcon size={22} weight="fill" />
-          Porto Alegre, RS
+          Americana, SP
         </div>
 
-        <NavLink to={'/'} className="cart">
+        <NavLink to={'/checkout'} className="cart">
+          <span className="cart__count">3</span>
           <ShoppingCartIcon size={22} weight="fill" />
         </NavLink>
       </Styled.HeaderDashboard>

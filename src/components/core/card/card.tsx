@@ -32,13 +32,13 @@ export const Card = (): ReactElement => {
         <div className="buy__dashboard">
           <div className="counter">
             <div className="minus">
-              <MinusIcon />
+              <MinusIcon size={14} />
             </div>
 
             <div className="value">1</div>
 
             <div className="more">
-              <PlusIcon />
+              <PlusIcon size={14} />
             </div>
           </div>
           <button className="cart">

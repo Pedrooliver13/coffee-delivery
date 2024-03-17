@@ -16,6 +16,9 @@ export const defaultTheme = {
     'base-button': '#E6E5E5',
     'base-input': '#EDEDED',
     'base-card': '#F3F2F2',
+    'border-rainbow':
+      'linear-gradient(white, white) padding-box padding-box, linear-gradient(to right, rgb(219, 172, 44), rgb(128, 71, 248)) border-box border-box',
+    red: '#D2042D',
   },
   textSizes: {
     'title-xl': '4.8rem',
@@ -42,4 +45,4 @@ export const defaultTheme = {
     default: "'Roboto', sans-serif",
     title: "'Baloo 2', cursive",
   },
-};
+} as const;
