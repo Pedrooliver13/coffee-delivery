@@ -13,7 +13,7 @@ export const CheckoutContainer = styled.div`
   }
 
   .forms {
-    max-width: 650px;
+    max-width: 690px;
     width: 100%;
 
     @media (max-width: ${({ theme }): string => theme.breakpoints.XL}) {
