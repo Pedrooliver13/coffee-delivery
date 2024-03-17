@@ -10,6 +10,7 @@ interface ButtonContainerProps {
 const variantStyles = (theme: DefaultTheme, variant: variantType) =>
   ({
     primary: css`
+      padding: 1.2rem 0.05rem;
       background-color: ${theme.colors['yellow']};
       color: ${theme.colors.white};
       height: auto;
@@ -48,9 +49,9 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     padding: 1rem;
     text-transform: uppercase;
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.2s ease 0s;
 
     ${variantStyles(theme, variant)}
 

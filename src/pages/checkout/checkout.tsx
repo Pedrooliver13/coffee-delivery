@@ -80,28 +80,30 @@ export const Checkout = (): ReactElement => {
                 name="paymentMethod"
                 control={control}
                 defaultValue={null}
-                render={({ field }) => (
+                key={EPaymentMethods.CREDIT_CARD}
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                render={({ field: { ref, ...rest } }) => (
                   <>
                     <RadioButton
-                      {...field}
+                      {...rest}
                       label="CARTÃO DE CRÉDITO"
-                      startIcon={<CreditCardIcon size={16} />}
+                      starticon={<CreditCardIcon size={16} />}
                       value={EPaymentMethods.CREDIT_CARD}
-                      checked={field.value === EPaymentMethods.CREDIT_CARD}
+                      checked={rest.value === EPaymentMethods.CREDIT_CARD}
                     />
                     <RadioButton
-                      {...field}
+                      {...rest}
                       label="CARTÃO DE DÉBITO"
-                      startIcon={<BankIcon size={16} />}
+                      starticon={<BankIcon size={16} />}
                       value={EPaymentMethods.DEBIT_CARD}
-                      checked={field.value === EPaymentMethods.DEBIT_CARD}
+                      checked={rest.value === EPaymentMethods.DEBIT_CARD}
                     />
                     <RadioButton
-                      {...field}
+                      {...rest}
                       label="DINHEIRO"
-                      startIcon={<MoneyIcon size={16} />}
+                      starticon={<MoneyIcon size={16} />}
                       value={EPaymentMethods.MONEY}
-                      checked={field.value === EPaymentMethods.MONEY}
+                      checked={rest.value === EPaymentMethods.MONEY}
                     />
                   </>
                 )}
@@ -111,7 +113,7 @@ export const Checkout = (): ReactElement => {
         </form>
       </div>
 
-      <div className="coffees__selected">
+      <Styled.CoffeesSelected>
         <h2 className="title">Cafés selecionados</h2>
 
         <form className="form">
@@ -120,9 +122,27 @@ export const Checkout = (): ReactElement => {
             <CardCart />
           </div>
 
-          <Button className="form__submit">Confirmar pedido</Button>
+          <div className="form__content">
+            <div>
+              <p>Total de itens</p>
+              <span>R$ 0,00</span>
+            </div>
+            <div>
+              <p>Entrega</p>
+              <span>R$ 0,00</span>
+            </div>
+
+            <div className="form__content--total">
+              <span>Total</span>
+              <span>R$ 0,00</span>
+            </div>
+          </div>
+
+          <div className="form__footer">
+            <Button className="form__footer--submit">Confirmar pedido</Button>
+          </div>
         </form>
-      </div>
+      </Styled.CoffeesSelected>
     </Styled.CheckoutContainer>
   );
 };

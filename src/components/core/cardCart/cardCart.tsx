@@ -25,7 +25,7 @@ export const CardCart = (): ReactElement => {
 
         <div className="content__footer">
           <CounterButton />
-          <Button variant="secondary" startIcon={<TrashIcon size={16} />}>
+          <Button variant="secondary" starticon={<TrashIcon size={16} />}>
             Remover
           </Button>
         </div>

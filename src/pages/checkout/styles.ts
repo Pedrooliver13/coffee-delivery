@@ -1,5 +1,5 @@
 // Packages
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CheckoutContainer = styled.div`
   display: flex;
@@ -83,12 +83,14 @@ export const CheckoutContainer = styled.div`
       }
     }
   }
+`;
 
-  .coffees__selected {
+export const CoffeesSelected = styled.div`
+  ${({ theme }) => css`
     max-width: 448px;
     width: 100%;
 
-    @media (max-width: ${({ theme }): string => theme.breakpoints.XL}) {
+    @media (max-width: ${theme.breakpoints.XL}) {
       max-width: 100%;
       padding: 0;
     }
@@ -96,16 +98,46 @@ export const CheckoutContainer = styled.div`
     .form {
       display: flex;
       flex-direction: column;
-      height: 448px;
+      max-height: 448px;
       padding: 4rem;
       margin-top: 10px;
-      background-color: ${({ theme }): string => theme.colors['base-card']};
+      background-color: ${theme.colors['base-card']};
       border-radius: 6px 44px;
 
       &__itens {
         overflow: auto;
-        max-height: 220px;
+        max-height: 200px;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: ${theme.textSizes['text-s']};
+        line-height: 2;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &--total {
+          font-weight: bold;
+          font-size: ${theme.textSizes['text-l']};
+        }
+
+        margin-bottom: 1rem;
+      }
+
+      &__footer {
+        display: flex;
+        align-items: flex-end;
+        flex: 1;
+
+        &--submit {
+          width: 100%;
+        }
       }
     }
-  }
+  `}
 `;

@@ -6,7 +6,7 @@ import * as Styled from './styles';
 
 interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  startIcon?: ReactElement;
+  starticon?: ReactElement;
 }
 
 export const RadioButton = (props: RadioButtonProps): ReactElement => {
@@ -15,7 +15,7 @@ export const RadioButton = (props: RadioButtonProps): ReactElement => {
       htmlFor={String(props.value)}
       checked={Boolean(props.checked)}
     >
-      {props.startIcon && props.startIcon}
+      {props?.starticon && props.starticon}
       {props.label}
       <input type="radio" id={String(props.value)} {...props} />
     </Styled.RadioButtonContainer>

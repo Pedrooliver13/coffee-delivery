@@ -5,8 +5,8 @@ import { ButtonHTMLAttributes, ReactElement } from 'react';
 import * as Styled from './styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  startIcon?: ReactElement;
-  endIcon?: ReactElement;
+  starticon?: ReactElement;
+  endicon?: ReactElement;
   variant?: 'primary' | 'secondary';
 }
 
@@ -17,9 +17,9 @@ export const Button = ({
 }: ButtonProps): ReactElement => {
   return (
     <Styled.ButtonContainer variant={variant} {...props}>
-      {props?.startIcon}
+      {props?.starticon && props.starticon}
       {children}
-      {props?.endIcon}
+      {props?.endicon}
     </Styled.ButtonContainer>
   );
 };

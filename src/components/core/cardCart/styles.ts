@@ -5,7 +5,7 @@ export const CardCartContainer = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid ${({ theme }): string => theme.colors['base-button']};
   gap: 1rem;
   margin-bottom: 2.4rem;
