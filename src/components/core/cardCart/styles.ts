@@ -9,6 +9,12 @@ export const CardCartContainer = styled.div`
   border-bottom: 1px solid ${({ theme }): string => theme.colors['base-button']};
   gap: 1rem;
   margin-bottom: 2.4rem;
+  flex-wrap: wrap;
+
+  @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+    display: flex;
+    justify-content: center;
+  }
 
   img {
     width: 64px;
@@ -21,9 +27,19 @@ export const CardCartContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
 
+    @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &__header {
       display: flex;
       justify-content: space-between;
+
+      @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       &--title {
         font-size: ${({ theme }): string => theme.textSizes['text-m']};
@@ -41,6 +57,10 @@ export const CardCartContainer = styled.div`
     &__footer {
       display: flex;
       gap: 10px;
+
+      @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+        align-items: center;
+      }
     }
   }
 `;

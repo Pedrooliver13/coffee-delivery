@@ -2,6 +2,7 @@
 import { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useHookFormMask } from 'use-mask-input';
+import { useNavigate } from 'react-router-dom';
 import {
   MapPinLine as MapPinLineIcon,
   CurrencyDollar as CurrencyDollarIcon,
@@ -28,6 +29,7 @@ enum EPaymentMethods {
 export const Checkout = (): ReactElement => {
   const { register, control } = useForm();
   const registerWithMask = useHookFormMask(register);
+  const navigate = useNavigate();
 
   return (
     <Styled.CheckoutContainer className="container">
@@ -139,7 +141,12 @@ export const Checkout = (): ReactElement => {
           </div>
 
           <div className="form__footer">
-            <Button className="form__footer--submit">Confirmar pedido</Button>
+            <Button
+              className="form__footer--submit"
+              onClick={() => navigate('/success')}
+            >
+              Confirmar pedido
+            </Button>
           </div>
         </form>
       </Styled.CoffeesSelected>
