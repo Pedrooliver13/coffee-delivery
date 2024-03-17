@@ -12,7 +12,7 @@
   "rules": {
     "react-refresh/only-export-components": [
       "warn",
-      { "allowConstantExport": true }
+      { "allowConstantExport": true, "allowExportNames": ["loader"] }
     ],
     "@typescript-eslint/explicit-module-boundary-types": "error",
     "@typescript-eslint/no-empty-interface": 0,
