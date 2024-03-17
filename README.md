@@ -20,7 +20,7 @@ $ cd coffee-delivery
 $ npm install or yarn install
 
 # Run the app
-$ npm start or yarn start
+$ npm dev or yarn dev
 ```
 
 ## :rocket: Technologies
