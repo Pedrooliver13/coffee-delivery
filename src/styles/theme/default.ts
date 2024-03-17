@@ -17,7 +17,7 @@ export const defaultTheme = {
     'base-input': '#EDEDED',
     'base-card': '#F3F2F2',
     'border-rainbow':
-      'linear-gradient(white, white) padding-box padding-box, linear-gradient(to right, rgb(219, 172, 44), rgb(128, 71, 248)) border-box border-box',
+      'linear-gradient(90deg, rgb(219, 172, 44), rgb(128, 71, 248))',
     red: '#D2042D',
   },
   textSizes: {
