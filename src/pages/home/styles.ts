@@ -60,7 +60,7 @@ export const SectionHero = styled.section`
       }
 
       &__subtitle {
-        color: ${({ theme }): string => theme.colors['base-title']};
+        color: ${({ theme }): string => theme.colors['base-subtitle']};
         font-size: ${({ theme }): string => theme.textSizes['text-l']};
         line-height: 26px;
 
