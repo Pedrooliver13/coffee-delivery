@@ -22,7 +22,9 @@ export const CardContainer = styled.div`
   }
 
   .tags {
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
     font-size: ${({ theme }): string => theme.textSizes['tag-bold']};
     font-weight: bold;
 
