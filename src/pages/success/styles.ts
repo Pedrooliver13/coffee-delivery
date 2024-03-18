@@ -9,8 +9,10 @@ interface SuccessPageItemListProps {
 export const SuccessContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-top: 10rem;
+    margin-top: 3rem;
+    gap: 30px;
 
     @media (max-width: ${theme.breakpoints.LG}) {
       flex-direction: column;
@@ -20,19 +22,48 @@ export const SuccessContainer = styled.div`
     }
 
     img {
-      width: 49.2rem;
-      object-fit: cover;
+      max-width: 49.2rem;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      line-height: 2;
+      font-size: ${theme.textSizes['text-l']};
+      color: ${theme.colors['base-subtitle']};
+
+      @media (max-width: ${theme.breakpoints.XL}) {
+        display: flex;
+        flex-direction: column;
+        font-size: ${theme.textSizes['text-s']};
+        line-height: 1;
+      }
+
+      h1 {
+        font-weight: 800;
+        font-size: ${theme.textSizes['title-l']};
+        font-family: ${theme.fonts.title};
+        color: ${theme.colors['yellow-dark']};
+        line-height: 1;
+
+        @media (max-width: ${theme.breakpoints.XL}) {
+          display: flex;
+          flex-direction: column;
+          font-size: ${theme.textSizes['text-l']};
+        }
+      }
     }
 
     .info {
       display: flex;
       min-width: 52.6rem;
+      width: 100%;
       padding: 0.3rem;
       color: ${theme.colors['base-text']};
       background: ${theme.colors['border-rainbow']};
       border-radius: 6px 44px;
 
-      @media (max-width: ${theme.breakpoints.LG}) {
+      @media (max-width: ${theme.breakpoints.XL}) {
         flex-direction: column;
         align-items: center;
         padding: 1px;
@@ -51,6 +82,7 @@ export const SuccessContainer = styled.div`
         border-radius: 6px 44px;
         padding: 5rem 4rem;
         background-color: ${theme.colors['white']};
+        gap: 20px;
 
         @media (max-width: ${theme.breakpoints.LG}) {
           flex-direction: column;
