@@ -10,6 +10,9 @@ import {
 // Components
 import { Card } from 'components/core';
 
+// Hooks
+import { useGetCoffees } from 'hooks/useGetCoffees';
+
 // Assets
 import CoffeeCupImage from 'assets/coffee-cup.svg';
 
@@ -17,6 +20,8 @@ import CoffeeCupImage from 'assets/coffee-cup.svg';
 import * as Styled from './styles';
 
 export const Home = (): ReactElement => {
+  const { data, isLoading } = useGetCoffees();
+
   return (
     <>
       <Styled.SectionHero>
@@ -66,12 +71,9 @@ export const Home = (): ReactElement => {
         <h1 className="title">Nossos cafés</h1>
 
         <section className="coffee-list">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data?.map((coffee) => (
+            <Card key={coffee.id} />
+          ))}
         </section>
       </Styled.CoffeeContent>
     </>
