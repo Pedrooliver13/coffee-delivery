@@ -20,7 +20,7 @@ import CoffeeCupImage from 'assets/coffee-cup.svg';
 import * as Styled from './styles';
 
 export const Home = (): ReactElement => {
-  const { data, isLoading } = useGetCoffees();
+  const { data } = useGetCoffees();
 
   return (
     <>
