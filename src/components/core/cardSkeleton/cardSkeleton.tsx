@@ -1,5 +1,9 @@
+// Packages
 import { ReactElement } from 'react';
 
+// Styles
+import * as Styled from './styles';
+
 export const CardSkeleton = (): ReactElement => {
-  return <div>cardSkeleton</div>;
+  return <Styled.CardSkeletonContainer></Styled.CardSkeletonContainer>;
 };
