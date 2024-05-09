@@ -7,7 +7,7 @@ import * as Styled from './styles';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   required?: boolean;
-  error?: string;
+  error?: string | undefined;
   className?: string;
 }
 

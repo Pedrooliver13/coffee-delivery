@@ -13,6 +13,8 @@
     "styled-components": "^5"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "immer": "^10.1.1",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,7 +22,8 @@
     "react-router-dom": "^6.14.2",
     "react-toastify": "^10.0.5",
     "styled-components": "^6.0.7",
-    "use-mask-input": "^3.3.7"
+    "use-mask-input": "^3.3.7",
+    "zod": "^3.23.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

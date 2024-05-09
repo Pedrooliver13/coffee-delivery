@@ -5,34 +5,16 @@
 
 - Make sure your commits follow our [commits guideline](https://github.com/stone-payments/stoneco-best-practices/blob/master/gitStyleGuide/README.md).
 - All validations to maintain code quality were performed and passed through:
-  - `yarn test:component:local`
-  - `yarn test:e2e:local`
   - `yarn lint`
-  - `yarn spell-checker`
-  - `yarn check-types`
   - `yarn prettier`
 - About tests:
   - [ ] The necessary tests for my new feature were implemented in this PR
   - [ ] It was not necessary to implement tests
 
-## Issue reference
-
-<!-- Add url of related ClickUp task. (Danger.js: Do not delete this comment) -->
-
 ## Description
 
 <!-- Write a description of what your PR delivers to the project. (Danger.js: Do not delete this comment) -->
 <!-- Describe any further improvements you may have made that are not directly related to the context of the PR. -->
-
-## How to test
-
-### Test cases
-
-<!-- Your PR test cases. (Danger.js: Do not delete this comment) -->
-
-### Step by step guide
-
-<!-- Step by step guide of how to test your PR. (Danger.js: Do not delete this comment) -->
 
 ## Screenshot
 

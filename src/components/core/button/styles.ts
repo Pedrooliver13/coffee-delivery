@@ -15,7 +15,7 @@ const variantStyles = (theme: DefaultTheme, variant: variantType) =>
       color: ${theme.colors.white};
       height: auto;
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: ${theme.colors['yellow-dark']};
       }
     `,
@@ -29,7 +29,7 @@ const variantStyles = (theme: DefaultTheme, variant: variantType) =>
         color: ${theme.colors.purple};
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: ${theme.colors['purple-light']};
         border: 1px solid ${theme.colors['purple-dark']};
       }
@@ -43,7 +43,6 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     justify-content: center;
     text-align: center;
     gap: 5px;
-    height: 32px;
     font-size: 1.4rem;
     font-weight: 600;
     padding: 1rem;
@@ -57,6 +56,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
     &:disabled {
       opacity: 0.7;
+      cursor: not-allowed;
     }
   `}
 `;

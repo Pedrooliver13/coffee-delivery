@@ -8,7 +8,8 @@ import {
 } from 'phosphor-react';
 
 // Components
-import { Card } from 'components/core';
+import { SectionCardsSkeleton } from 'components/core';
+import { Card } from 'components/shared';
 
 // Hooks
 import { useGetCoffees } from 'hooks/useGetCoffees';
@@ -20,7 +21,7 @@ import CoffeeCupImage from 'assets/coffee-cup.svg';
 import * as Styled from './styles';
 
 export const Home = (): ReactElement => {
-  const { data } = useGetCoffees();
+  const { data, isLoading } = useGetCoffees();
 
   return (
     <>
@@ -70,11 +71,15 @@ export const Home = (): ReactElement => {
       <Styled.CoffeeContent className="container">
         <h1 className="title">Nossos cafés</h1>
 
-        <section className="coffee-list">
-          {data?.map((coffee) => (
-            <Card key={coffee.id} />
-          ))}
-        </section>
+        {!isLoading ? (
+          <section className="coffee-list">
+            {data?.map((coffee) => (
+              <Card key={coffee?.id} data={coffee} />
+            ))}
+          </section>
+        ) : (
+          <SectionCardsSkeleton />
+        )}
       </Styled.CoffeeContent>
     </>
   );

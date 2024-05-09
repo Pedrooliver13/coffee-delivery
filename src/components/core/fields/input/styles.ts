@@ -31,6 +31,7 @@ export const InputContainer = styled.div`
       font-size: 1.6rem;
       font-weight: 400;
       text-transform: capitalize;
+      color: ${({ theme }): string => theme.colors['base-label']};
     }
 
     &:active {
@@ -40,6 +41,7 @@ export const InputContainer = styled.div`
 
   .error {
     font-size: 1.2rem;
+    margin-top: 0.2rem;
     color: ${(props) => props.theme.colors.red};
   }
 `;

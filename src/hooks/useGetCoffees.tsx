@@ -1,13 +1,8 @@
 // Packages
 import { useState, useEffect } from 'react';
 
-interface Coffee {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-}
+// Models
+import { Coffee } from 'models/coffee';
 
 interface UseGetCoffeesReturn {
   data: Coffee[];

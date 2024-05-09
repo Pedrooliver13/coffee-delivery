@@ -61,7 +61,7 @@ export const SuccessContainer = styled.div`
       padding: 0.3rem;
       color: ${theme.colors['base-text']};
       background: ${theme.colors['border-rainbow']};
-      border-radius: 6px 44px;
+      border-radius: 8px 48px;
 
       @media (max-width: ${theme.breakpoints.XL}) {
         flex-direction: column;
