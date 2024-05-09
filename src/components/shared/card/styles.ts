@@ -17,6 +17,7 @@ export const CardContainer = styled.div`
 
   img {
     max-width: 120px;
+    width: 100%;
     margin-top: -2rem;
     align-self: center;
   }
@@ -27,6 +28,7 @@ export const CardContainer = styled.div`
     gap: 5px;
     font-size: ${({ theme }): string => theme.textSizes['tag-bold']};
     font-weight: bold;
+    text-transform: uppercase;
 
     span {
       border-radius: 100px;

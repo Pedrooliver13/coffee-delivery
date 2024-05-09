@@ -6,6 +6,9 @@ import {
   ShoppingCart as ShoppingCartIcon,
 } from 'phosphor-react';
 
+// Hooks
+import { useGlobalContext } from 'hooks/useGlobalContext';
+
 // Assets
 import CoffeeDeliveryLogo from 'assets/coffee-delivery-logo.svg';
 
@@ -13,6 +16,9 @@ import CoffeeDeliveryLogo from 'assets/coffee-delivery-logo.svg';
 import * as Styled from './styles';
 
 export const Header = (): ReactElement => {
+  const { totalCartItems } = useGlobalContext();
+  const isShowBadge = totalCartItems > 0;
+
   return (
     <Styled.HeaderContainer className="container">
       <NavLink to={'/'}>
@@ -29,7 +35,7 @@ export const Header = (): ReactElement => {
         </div>
 
         <NavLink to={'/checkout'} className="cart">
-          <span className="cart__count">3</span>
+          {isShowBadge && <span className="cart__count">{totalCartItems}</span>}
           <ShoppingCartIcon size={22} weight="fill" />
         </NavLink>
       </Styled.HeaderDashboard>

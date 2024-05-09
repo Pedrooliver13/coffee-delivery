@@ -1,18 +1,40 @@
 // Packages
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   MapPin as MapPinIcon,
   Timer as TimerIcon,
   CurrencyDollar as CurrencyDollarIcon,
 } from 'phosphor-react';
 
+// Hooks
+import { useGlobalContext } from 'hooks/useGlobalContext';
+
 // Assets
 import MotoBoyImage from 'assets/motoboy.svg';
+
+// Models
+import { EPaymentMethods } from 'models/coffee';
 
 // Styles
 import * as Styled from './styles';
 
 export const Success = (): ReactElement => {
+  const { coffeeForm } = useGlobalContext();
+  const navigate = useNavigate();
+
+  const paymentTypesName: { [key: string]: string } = {
+    [EPaymentMethods.DEBIT_CARD]: 'Cartão de débito',
+    [EPaymentMethods.CREDIT_CARD]: 'Cartão de crédito',
+    [EPaymentMethods.MONEY]: 'Dinheiro',
+  };
+
+  useEffect(() => {
+    if (!coffeeForm.addressNumber) {
+      navigate('/');
+    }
+  }, [coffeeForm, navigate]);
+
   return (
     <Styled.SuccessContainer className="container">
       <div className="success">
@@ -28,8 +50,12 @@ export const Success = (): ReactElement => {
                 <MapPinIcon size={22} weight="fill" />
               </div>
               <p>
-                Entrega em <span>Rua João Daniel Martinelli, 102</span> <br />{' '}
-                Farrapos - Porto Alegre, RS
+                Entrega em{' '}
+                <span>
+                  {coffeeForm?.street}, {coffeeForm?.addressNumber}
+                </span>{' '}
+                <br /> {coffeeForm?.neighborhood} - {coffeeForm?.city},{' '}
+                {coffeeForm?.uf}
               </p>
             </Styled.ItemList>
 
@@ -47,7 +73,8 @@ export const Success = (): ReactElement => {
               </div>
               <p>
                 Pagamento na entrega
-                <br /> <span>Cartão de Crédito</span>
+                <br />{' '}
+                <span>{paymentTypesName?.[coffeeForm?.paymentMethod]}</span>
               </p>
             </Styled.ItemList>
           </div>

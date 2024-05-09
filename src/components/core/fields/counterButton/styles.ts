@@ -6,7 +6,6 @@ export const CounterButtonContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 7.2rem;
-  height: 32px;
   padding: 1rem;
   background-color: ${({ theme }): string => theme.colors['base-button']};
   color: ${({ theme }): string => theme.colors['base-title']};
@@ -17,5 +16,6 @@ export const CounterButtonContainer = styled.div`
     cursor: pointer;
     width: 14px;
     color: ${({ theme }): string => theme.colors['purple']};
+    user-select: none;
   }
 `;

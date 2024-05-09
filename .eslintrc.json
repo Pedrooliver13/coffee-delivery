@@ -41,6 +41,8 @@
         "Components": [{ "path": "components" }, { "path": "components/" }],
         "Contexts": [{ "path": "contexts" }],
         "Hooks": [{ "path": "hooks" }],
+        "Models": [{ "path": "models" }],
+        "Services": [{ "path": "services" }],
         "Styles": [
           { "path": "styles" },
           { "path": ".css" },

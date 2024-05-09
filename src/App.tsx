@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { ToastContainer } from 'react-toastify';
 
 // Contexts
-import { CartContextProvider } from 'contexts/cartContext';
+import { GlobalContextProvider } from 'contexts/globalContext';
 
 // Routes
 import { Router } from 'router';
@@ -20,13 +20,13 @@ const App = (): ReactElement => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
 
-      <CartContextProvider>
+      <GlobalContextProvider>
         <BrowserRouter>
           <Router />
         </BrowserRouter>
-      </CartContextProvider>
+      </GlobalContextProvider>
 
-      <ToastContainer />
+      <ToastContainer position="top-center" />
     </ThemeProvider>
   );
 };
