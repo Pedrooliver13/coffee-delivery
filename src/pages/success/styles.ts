@@ -66,7 +66,8 @@ export const SuccessContainer = styled.div`
       @media (max-width: ${theme.breakpoints.XL}) {
         flex-direction: column;
         align-items: center;
-        padding: 1px;
+        padding: 3px;
+        border-radius: 8px 46px;
         min-width: 100%;
       }
 
