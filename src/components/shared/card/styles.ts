@@ -16,7 +16,7 @@ export const CardContainer = styled.div`
   background-color: ${({ theme }): string => theme.colors['base-card']};
 
   @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
-    max-width: 360px;
+    max-width: 320px;
   }
 
   img {
