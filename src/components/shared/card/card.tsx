@@ -1,6 +1,7 @@
 // Packages
 import { ReactElement, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import { ShoppingCart as ShoppingCartIcon } from 'phosphor-react';
 
 // Components
@@ -23,6 +24,7 @@ interface CardProps {
 }
 
 export const Card = ({ data }: CardProps): ReactElement => {
+  const navigate = useNavigate();
   const { addNewCoffeeInCart, updateQuantityCoffeeInCart, cartList } =
     useGlobalContext();
 
@@ -32,16 +34,17 @@ export const Card = ({ data }: CardProps): ReactElement => {
   const handleClickAddProductInCart = () => {
     const isAlreadyInCart = Boolean(cartItem);
 
+    navigate('/checkout');
+    toast.info('Produto adicionado ao carrinho!', {
+      theme: 'dark',
+      autoClose: 400,
+    });
+
     if (isAlreadyInCart) {
       return updateQuantityCoffeeInCart({ id: data?.id, quantity });
     }
 
     addNewCoffeeInCart({ ...data, quantity });
-
-    toast.info('Produto adicionado ao carrinho!', {
-      theme: 'dark',
-      autoClose: 400,
-    });
   };
 
   const handleQuantityProductInCart = (value: number): void => {

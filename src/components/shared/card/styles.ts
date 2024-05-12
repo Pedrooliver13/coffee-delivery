@@ -15,6 +15,10 @@ export const CardContainer = styled.div`
   border-radius: 6px 36px;
   background-color: ${({ theme }): string => theme.colors['base-card']};
 
+  @media (max-width: ${({ theme }): string => theme.breakpoints.SM}) {
+    max-width: 360px;
+  }
+
   img {
     max-width: 120px;
     width: 100%;
